@@ -17,9 +17,9 @@ function ChatInput({ sendMessage }) {
 
     const send = (e) => {
         e.preventDefault();
-        if(!input) return;
+        if(!input) return; // stops the messages fully
         sendMessage(input)
-        setInput("")
+        setInput("")//rehrersh
     }
 
 
@@ -27,14 +27,14 @@ function ChatInput({ sendMessage }) {
         <Container>
             <InputContainer>
                 <form>
-                    <input 
+                    <input               //changes input everytime we type 
                         onChange={(e)=>setInput(e.target.value)}
                         type="text" 
-                        value={input}
+                        value={input} // from send messages
                         placeholder="Message here..." />
                     <SendButton 
-                        type="submit"
-                        onClick={send}>
+                        type="submit"    // allows to enter the , it also call it when enter it will call on send ntton
+                        onClick={send}> 
                         <Send />
                     </SendButton>
                     

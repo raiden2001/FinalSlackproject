@@ -12,7 +12,7 @@ function Chat({ user }) {
     let { channelId } = useParams();
     const [ channel, setChannel ] = useState();
     const [ messages, setMessages ] = useState([])
-
+   
     const getMessages = () => {
         db.collection('rooms')
         .doc(channelId)
@@ -39,14 +39,14 @@ function Chat({ user }) {
     const getChannel = () => {
         db.collection('rooms')
         .doc(channelId)
-        .onSnapshot((snapshot)=>{
+        .onSnapshot((snapshot)=>{    // book took picture data of book get data of that channel
             setChannel(snapshot.data());
         })
     }
 
     
 
-    useEffect(()=>{
+    useEffect(()=>{  // this changes the channel titles
         getChannel();
         getMessages();
     }, [channelId])

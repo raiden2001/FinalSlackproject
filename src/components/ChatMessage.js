@@ -6,7 +6,7 @@ function ChatMessage({ text, name, image, timestamp }) {
     return (
         <Container>
             <UserAvatar>
-                <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-1/p200x200/11800533_10152994436706776_2280432251874468435_n.jpg?_nc_cat=108&ccb=3&_nc_sid=7206a8&_nc_ohc=bOGGYpEta1kAX8pjOuQ&_nc_ht=scontent-ort2-2.xx&tp=6&oh=14381f1200699a86c352009fb26892dc&oe=605C4473" />
+                <img src={image} />
             </UserAvatar>
             <MessageContent>
                 <Name>

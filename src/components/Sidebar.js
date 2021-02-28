@@ -14,7 +14,7 @@ function Sidebar(props) {
     const goToChannel = (id) => {
         if(id){
             console.log(id);
-            history.push(`/room/${id}`)
+            history.push(`/room/${id}`) // changes the id in different ways when going to other chat
         }
     }
 
@@ -32,7 +32,7 @@ function Sidebar(props) {
         <Container>
             <WorkspaceContainer>
                 <Name>
-                    CleverProgrammer
+                    Welcome to my Business Page
                 </Name>
                 <NewMessage>
                     <AddCircleOutlineIcon />

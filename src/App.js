@@ -8,14 +8,14 @@ import styled from 'styled-components'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import db from './firebase'
-import { auth, provider } from "./firebase";
+import { auth, provider } from "./firebase";//signout 
 
 
 
 function App() {
 
-  const [rooms, setRooms] = useState([]) 
-  const [ user, setUser ] = useState(JSON.parse(localStorage.getItem('user'))); 
+  const [rooms, setRooms] = useState([])  // put pm oppostite  store the user inside recoginze loging in 
+  const [ user, setUser ] = useState(JSON.parse(localStorage.getItem('user'))); //stays forever
 
   const getChannels = () => {
     db.collection('rooms').onSnapshot((snapshot) => {
@@ -29,7 +29,7 @@ function App() {
   const signOut = () => {
     auth.signOut().then(()=>{
       localStorage.removeItem('user');
-      setUser(null);
+      setUser(null); //dpont want database or in our local storage anymore only site user change in state
     })
   }
 
